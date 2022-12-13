@@ -14,7 +14,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.addForm = this.fb.group({
-      projectid: [Math.round(Math.random())],
+      projectid: [Date.now()],
       projectname: ['', [Validators.required]],
       percentage: ['', [Validators.required]],
       managername: ['', [Validators.required]],
