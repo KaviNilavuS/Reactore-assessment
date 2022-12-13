@@ -1,0 +1,51 @@
+<h1>Add Project</h1>
+<form
+class="addform"
+[formGroup]="addForm"
+novalidate
+(ngSubmit)="onSubmit()"
+>
+<mat-form-field>
+  <input
+    autofocus
+    type="text"
+    matInput
+    placeholder="Project Name"
+    formControlName="projectname"
+  />
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    autofocus
+    type="number"
+    matInput
+    placeholder="Percentage Completed"
+    formControlName="percentage"
+    min="0"
+    max="100"
+  />
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    autofocus
+    type="text"
+    matInput
+    placeholder="Manager Name"
+    formControlName="managername"
+  />
+</mat-form-field>
+
+<div>
+<button
+  type="submit"
+  mat-raised-button
+  color="primary"
+  [disabled]="addForm.invalid"
+>
+  Submit
+</button>
+</div>
+
+</form>

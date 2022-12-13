@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7%;
+
+    &__child {
+        width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+<div class="confirm-dialog" align="center">
+    <mat-icon class="confirm-dialog__warning-icon">warning</mat-icon>
+    <h2 class="confirm-dialog__title">Are you Sure?</h2>
+    <div class="confirm-dialog__message">
+      <div class="confirm-dialog__text">Do you really want to delete the Project?</div>
+    </div>
+    <div class="confirm-dialog__btn" >
+      <mat-dialog-actions align="center">
+        <button mat-raised-button color="primary" (click)="close(true)">Confirm</button>
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+      </mat-dialog-actions>
+    </div>
+  </div>

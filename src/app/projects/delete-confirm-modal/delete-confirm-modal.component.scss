@@ -1,0 +1,8 @@
+.confirm-dialog {
+    position: relative;
+
+    &__warning-icon {
+      color: red !important;
+      font-size: 35px;
+    }
+  }
