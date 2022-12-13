@@ -44,7 +44,7 @@ export class DataService {
   }
 
   setData(value): boolean {
-    let isSaved = true;
+    const isSaved = true;
     const { index, data } = this.getProjectsAndIndex(value.projectid);
     if (index === -1) {
       data.push(value);

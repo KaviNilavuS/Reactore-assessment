@@ -23,7 +23,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     })
   ],
   providers: [],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

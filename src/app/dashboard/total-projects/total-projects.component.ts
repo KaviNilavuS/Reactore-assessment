@@ -65,8 +65,8 @@ export class TotalProjectsComponent implements OnInit {
     this.chart = event;
   }
 
-  prepareChart() {
-    let p = [];
+  prepareChart(): void {
+    const p = [];
     this.dataService.currentData.subscribe((res) => {
       res.forEach((element) => {
         p.push(element.projectname);
