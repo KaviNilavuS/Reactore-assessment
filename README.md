@@ -26,3 +26,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng lint` to execute lint.
 
 
+## Running Test
+
+Run `ng test` to execute lint.
+Run `ng test --code-coverage` to see code coverage report.
