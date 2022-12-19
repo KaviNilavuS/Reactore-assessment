@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
   public data;
   dataSource = new MatTableDataSource<any>([]);
 
-  constructor(private dataService: DataService, private dialog: MatDialog) {}
+  constructor(private dataService: DataService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.displayedColumns = ['projectname', 'percentage', 'managername', 'actions'];

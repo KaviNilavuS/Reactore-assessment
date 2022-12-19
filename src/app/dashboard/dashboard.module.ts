@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TotalProjectsComponent } from './total-projects/total-projects.component';
 import { MatRippleModule } from '@angular/material/core';
-import { NgxEchartsModule } from 'ngx-echarts';
 
 
 @NgModule({
@@ -10,7 +9,6 @@ import { NgxEchartsModule } from 'ngx-echarts';
   imports: [
     CommonModule,
     MatRippleModule,
-    NgxEchartsModule
   ],
   exports: [TotalProjectsComponent]
 })

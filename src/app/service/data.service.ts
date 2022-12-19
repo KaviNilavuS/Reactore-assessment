@@ -28,7 +28,7 @@ export class DataService {
     },
   ];
 
-  constructor(public dialog: MatDialog, private snackBar: MatSnackBar) {}
+  constructor(public dialog: MatDialog, public snackBar: MatSnackBar) {}
 
   public bsValue$ = new BehaviorSubject(this.getProjects());
   public currentData = this.bsValue$.asObservable();

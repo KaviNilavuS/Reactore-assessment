@@ -16,5 +16,4 @@ export class DeleteConfirmModalComponent {
   close(value): void {
     this.dialogRef.close(value);
   }
-
 }

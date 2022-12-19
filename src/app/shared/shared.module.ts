@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { ProjectsModule } from '../projects/projects.module';
 import { SharedComponent } from './shared/shared.component';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SharedComponent],
   imports: [
     CommonModule,
     DashboardModule,
-    ProjectsModule
+    ProjectsModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: SharedComponent
+      }
+    ])
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
-import { EChartsOption, ECharts } from 'echarts';
 
 @Component({
   selector: 'app-total-projects',
@@ -15,37 +14,16 @@ export class TotalProjectsComponent implements OnInit {
   unbounded = false;
   radius: number;
   color: string;
-  chart: ECharts;
   projectName = [];
   percentage = [];
-  title = 'Projects';
-  series = '';
-
-  chartOption: EChartsOption = {
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    },
-    yAxis: {
-      type: 'value',
-    },
-    series: [
-      {
-        data: [120, 200, 150, 80, 70, 110, 130],
-        type: 'bar',
-        showBackground: true,
-        backgroundStyle: {
-          color: 'rgba(180, 180, 180, 0.2)',
-        },
-      },
-    ],
-  };
+  finalData: any;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     let totalPercentage = 0;
     this.dataService.currentData.subscribe((res) => {
+      this.finalData = res;
       this.projectName = [];
       this.percentage = [];
       totalPercentage = 0;
@@ -57,36 +35,6 @@ export class TotalProjectsComponent implements OnInit {
       this.count = res.length;
 
       this.overallProgress = totalPercentage ? Math.round(totalPercentage / this.count) : 0;
-    });
-    this.prepareChart();
-  }
-
-  public onChartInit(event: ECharts): void {
-    this.chart = event;
-  }
-
-  prepareChart(): void {
-    const p = [];
-    this.dataService.currentData.subscribe((res) => {
-      res.forEach((element) => {
-        p.push(element.projectname);
-      });
-
-      this.chartOption.xAxis = {
-        data: this.projectName,
-        type: 'category',
-      };
-      this.chartOption.series = [
-        {
-          data: this.percentage,
-          type: 'bar',
-          showBackground: true,
-          backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)',
-          },
-        },
-      ];
-      this.chart?.setOption(this.chartOption);
     });
   }
 }
