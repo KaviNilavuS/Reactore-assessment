@@ -1,51 +1,67 @@
 <h1>Add Project</h1>
-<form
-class="addform"
-[formGroup]="addForm"
-novalidate
-(ngSubmit)="onSubmit()"
->
-<mat-form-field>
-  <input
-    autofocus
-    type="text"
-    matInput
-    placeholder="Project Name"
-    formControlName="projectname"
-  />
-</mat-form-field>
+<form class="addform" [formGroup]="addForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input autofocus class="addform__projectname" type="text" matInput placeholder="Project Name"
+      formControlName="projectname" />
+    <mat-error *ngIf="
+      addForm.get('projectname').dirty ||
+      addForm.get('projectname').touched
+          ">
+      <ng-container *ngIf="
+          addForm
+                .get('projectname')
+                .hasError('required')
+            ">
+        Percentage is required!
+      </ng-container>
+    </mat-error>
+  </mat-form-field>
 
-<mat-form-field>
-  <input
-    autofocus
-    type="number"
-    matInput
-    placeholder="Percentage Completed"
-    formControlName="percentage"
-    min="0"
-    max="100"
-  />
-</mat-form-field>
+  <mat-form-field>
+    <input class="addform__percentage" type="number" matInput placeholder="Percentage Completed"
+      formControlName="percentage" min=0 max=100 />
+    <mat-error *ngIf="
+      addForm.get('percentage').dirty ||
+      addForm.get('percentage').touched
+          ">
+      <ng-container *ngIf="
+          addForm
+                .get('percentage')
+                .hasError('required')
+            ">
+        Percentage is required!
+      </ng-container>
+      <ng-container *ngIf="
+          addForm
+                .get('percentage')
+                .hasError('min') ||   addForm
+                .get('percentage')
+                .hasError('max')
+            ">
+        Percentage range should be 0 to 100 only!
+      </ng-container>
+    </mat-error>
+  </mat-form-field>
 
-<mat-form-field>
-  <input
-    autofocus
-    type="text"
-    matInput
-    placeholder="Manager Name"
-    formControlName="managername"
-  />
-</mat-form-field>
+  <mat-form-field>
+    <input class="addform__managername" type="text" matInput placeholder="Manager Name" formControlName="managername" />
+    <mat-error *ngIf="
+    addForm.get('managername').dirty ||
+    addForm.get('managername').touched
+        ">
+      <ng-container *ngIf="
+        addForm
+              .get('managername')
+              .hasError('required')
+          ">
+        Percentage is required!
+      </ng-container>
+    </mat-error>
+  </mat-form-field>
 
-<div>
-<button
-  type="submit"
-  mat-raised-button
-  color="primary"
-  [disabled]="addForm.invalid"
->
-  Submit
-</button>
-</div>
-
+  <div>
+    <button type="submit" class="addform__submit" mat-raised-button color="primary" [disabled]="addForm.invalid">
+      Submit
+    </button>
+  </div>
 </form>

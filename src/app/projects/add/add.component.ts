@@ -16,7 +16,7 @@ export class AddComponent implements OnInit {
     this.addForm = this.fb.group({
       projectid: [Date.now()],
       projectname: ['', [Validators.required]],
-      percentage: ['', [Validators.required]],
+      percentage: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
       managername: ['', [Validators.required]],
     });
 

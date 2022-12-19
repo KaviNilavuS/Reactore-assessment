@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -18,9 +17,6 @@ import { NgxEchartsModule } from 'ngx-echarts';
     SharedModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
-    })
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

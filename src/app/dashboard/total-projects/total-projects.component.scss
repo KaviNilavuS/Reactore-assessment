@@ -1,4 +1,8 @@
-.example-ripple-container {
+.count-container {
+  display: flex;
+  justify-content: space-around;
+
+  &__total, &__overall {
     cursor: pointer;
     text-align: center;
 
@@ -12,11 +16,6 @@
 
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
-  }
-
-  .count {
-    display: flex;
-    justify-content: space-around;
 
     .bold {
       font-weight: bold;
@@ -24,3 +23,26 @@
       font-size: 25px;
     }
   }
+}
+
+rect:hover + .hide {
+  display: block;
+}
+
+rect:hover {
+  fill: #8da2e3;
+  cursor: pointer;
+}
+
+#info {
+  writing-mode: tb-rl;
+  transform: translateX(8px);
+}
+
+#info-percentage {
+  fill: #000 !important;
+}
+
+.hide {
+  display: none;
+}
